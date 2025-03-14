@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles.css";
+import loginImage from "../assets/img-login.png"; // Importa la imagen
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
@@ -8,7 +9,7 @@ const Login = ({ onLogin }) => {
   const [loading, setLoading] = useState(false);
 
   const validCredentials = {
-    email: "admin@example.com",
+    email: "javier@gmail.com",
     password: "123456",
   };
 
@@ -42,7 +43,7 @@ const Login = ({ onLogin }) => {
   return (
     <div className="container">
       <div className="login-card">
-        <span role="img" aria-label="login" className="login-icon">🔑</span>
+        <img src={loginImage} alt="Login" className="login-image" />
         <h2>Iniciar Sesión</h2>
         <form onSubmit={handleLogin}>
           <input
@@ -58,10 +59,11 @@ const Login = ({ onLogin }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            minLength="6"
           />
           {error && <p className="error">{error}</p>}
-          <button type="submit" disabled={loading} className="login-btn">
-            {loading ? <span className="spinner"></span> : "Iniciar Sesión"}
+          <button className="login-btn" type="submit" disabled={loading}>
+            {loading ? <div className="spinner"></div> : "Iniciar Sesión"}
           </button>
         </form>
       </div>
