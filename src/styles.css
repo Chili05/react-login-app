@@ -1,143 +1,202 @@
-/* Fondo general con degradado */
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #eef2f3, #dfe9f3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Reset de estilos */
+* {
     margin: 0;
-}
-
-/* Contenedor principal */
-.container {
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 100vh;
-}
-
-/* Tarjeta de login */
-.login-card {
+    background-color: #f4f6f9;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: white;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Imagen en el login */
-.login-image {
-    width: 120px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    gap: 3rem;
+  }
+  
+  /* Imagen */
+  .image-container img {
+    width: 180px;
     height: auto;
-    margin-bottom: 20px;
-}
-
-/* Título */
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Campos de entrada */
-input {
+  }
+  
+  /* Formulario */
+  .form-container {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    max-width: 400px;
+  }
+  
+  /* Título */
+  .form-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Etiquetas */
+  .form-container label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  /* Inputs */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
-}
-
-/* Mensaje de error */
-.error {
+  }
+  
+  /* Contenedor de contraseña */
+  .password-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-container input {
+    width: 100%;
+    padding-right: 40px;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+  }
+  
+  /* Separación del enlace "Olvidé mi contraseña" */
+  .password-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .password-label a {
+    font-size: 14px;
+  }
+  
+  /* Checkbox recordar */
+  .remember-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .remember-container input {
+    width: auto;
+    margin-right: 8px;
+  }
+  
+  /* Botón de inicio de sesión */
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #162c68;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+  }
+  
+  .login-btn:hover {
+    background-color: #0d1d4a;
+  }
+  
+  /* Mensaje de error */
+  .error {
     color: red;
     font-size: 14px;
-    margin-bottom: 10px;
-}
-
-/* Botón de login */
-.login-btn {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  /* Links */
+  a {
+    color: #162c68;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Pie de página */
+  .contact-link {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* Estilos para la tarjeta de bienvenida */
+  .login-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+  }
+  
+  .welcome-title {
+    font-size: 24px;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animación de carga */
-.spinner {
-    width: 20px;
-    height: 20px;
-    border: 3px solid white;
-    border-top: 3px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.login-btn:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
-    transform: scale(1.05);
-}
-
-/* Animación de entrada */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Diseño responsive */
-@media (max-width: 450px) {
-    .login-card {
-        padding: 2rem;
-        width: 90%;
-    }
-}
-
-/* Botón de cerrar sesión con mismo estilo */
-.logout-btn {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    border: none;
-    color: white;
+    color: #333;
+  }
+  
+  .username {
+    color: #1e3a8a; /* Azul oscuro */
+  }
+  
+  .welcome-text {
     font-size: 16px;
-    border-radius: 8px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón Cerrar Sesión */
+  .logout-btn {
+    background-color: #1e3a8a; /* Mismo color que el de Iniciar Sesión */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logout-btn:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
-    transform: scale(1.05);
-}
+    transition: background 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: #14285d; /* Un tono más oscuro al pasar el mouse */
+  }
+  
+  /* Ajuste para separar "Olvidé mi contraseña" */
+label a {
+    margin-left: 170px; /* Agrega espacio entre el texto y el enlace */
+    font-size: 14px;
+  }
+  
